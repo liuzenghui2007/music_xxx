@@ -5,11 +5,11 @@ set(CMAKE_CXX_STANDARD 20)
 
 find_package(SDL2 CONFIG REQUIRED)
 
-add_executable(music main.cpp)
+add_executable(music main.cpp windows.cpp)
 
 target_include_directories(music PRIVATE 
     ${SDL2_INCLUDE_DIRS}
-    /opt/homebrew/include/SDL2
+    ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
 target_link_libraries(music
